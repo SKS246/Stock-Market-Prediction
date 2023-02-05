@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+<html>
+
+<body>
+    <div class="login">
+
+        <div>
+            <h3 id="date-title_1">Enter date</h3>
+            <h3 id="date-title_2">(in format - YYYY-MM-DD)</h3>
+        </div>
+
+        <!-- <img src="Important-functions-of-stock-market.jpeg" alt="Stock Market Image" width="500" height="333" id="image"> -->
+
+        <h3 id="company-title">Choose Company</h3>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" id="about-me-icon">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+
+        <h2 id="about-me-title"><u>About Me</u></h2>
+        <p id="about-me-para">I am a computer science enthusiast who loves to explore and learn different aspects of technology and apply that in the real world. I am an active developer and programmer who likes to build new products to continue my learning in the field of technology and to eventually contribute to the society by solving existing local/global problems through these products.</p>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16" id="about-product-icon">
+            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+        </svg>
+
+        <div id="center-page">
+            <h1 id="page-title">Stock Price Predictor</h1>
+            <h2 id="about-product-title"><u>About The Product</u></h2>
+            <p id="about-product-para">As seen from the title, this product is about the stock market. This product in brief is a stock market predictor which analyzes previous trends in the market to predict the stock market price for the next few days.</p>
+
+            <p id="about-product-para2"><b><u>NIFTY 50: </u></b>The website predicts the stock prices of all the stocks in the NIFTY 50 Index. The NIFTY 50 is a benchmark Indian stock market index that represents the weighted average of 50 of the largest Indian companies listed on the National Stock Exchange.</p>
+
+            <p id="about-product-para3"><b><u>ML Model: </u></b>The website queries data from a complex machine learning algorithm which is trained using the LSTM ( Long Short Term Memory ) algorithm to analyze the previous trends and predict the price of a specific stock for the next few days.</p>
+
+            <p id="about-product-para4"><b><u>Dataset: </u></b>The same data from the model then is imported to the database of the website. The website uses the http POST method to extract data from the database and display the predictions for you - the user on the website.</p>
+        </div>
+
+        <img src="static/nifty50.png" id="image">
+        <img src="static/ml.jpeg" id="image2">
+        <img src="static/data.jpeg" id="image3">
+
+
+
+        <form action="post" method="post">
+            {% csrf_token %}
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16" id="company-icon">
+                <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+              </svg>
+
+            <select class="form-select form-select-lg mb-3" name="company-names" id="company-names" aria-label="Default select example">
+
+                <option selected>Click to view options</option>
+                <option value="reliance">Reliance LTD.</option>
+                <option value="tcs">TCS</option>
+                <option value="axis_bank">Axis Bank</option>
+                <option value="asian_paints">Asian Paints</option>
+                <option value="bajaj_auto">Bajaj Auto</option>
+                <option value="bajaj_finance">Bajaj Finance</option>
+                <option value="bajaj_finserv">Bajaj Finserv</option>
+                <option value="bharti_airtel">Bharti Airtel</option>
+                <option value="bpcl">BPCL</option>
+                <option value="britannia">Britannia</option>
+                <option value="cipla">Cipla</option>
+                <option value="coal_india">Coal India</option>
+                <option value="divis_lab">Divis Laboratories</option>
+                <option value="dr_reddys_lab">Dr. Reddys Lab</option>
+                <option value="eicher_motor">Eicher Motor</option>
+                <option value="grasim">Grasim</option>
+                <option value="hcl_tech">HCL Tech</option>
+                <option value="hdfc">HDFC</option>
+                <option value="hdfc_bank">HDFC Bank</option>
+                <option value="hero_motor">Hero Motorcorp</option>
+                <option value="hindalco">Hindalco</option>
+                <option value="hul">HUL</option>
+                <option value="icici_bank">ICICI Bank</option>
+                <option value="indusind_bank">Indusind Bank</option>
+                <option value="infosys">Infosys</option>
+                <option value="ioc">IOC</option>
+                <option value="itc">ITC</option>
+                <option value="jsw_steel">JSW_Steel</option>
+                <option value="kotak_mahindra_bank">Kotak Mahindra Bank</option>
+                <option value="lnt">L&T</option>
+                <option value="maruti_suzuki">Maruti Suzuki</option>
+                <option value="mnm">M&M</option>
+                <option value="nestle">Nestle</option>
+                <option value="ntpc">NTPC</option>
+                <option value="ongc">ONGC</option>
+                <option value="power_grid">Power Grid</option>
+                <option value="sbi">SBI</option>
+                <option value="sbi_life_insurance">SBI_Life_Insurance</option>
+                <option value="shree_cement">Shree_Cement</option>
+                <option value="sun_pharma">Sun Pharma</option>
+                <option value="tata_motors">Tata Motors</option>
+                <option value="tata_steel">Tata Steel</option>
+                <option value="tech_mahindra">Tech Mahindra</option>
+                <option value="titan">Titan</option>
+                <option value="ultratech_cement">Ultratech Cement</option>
+                <option value="upl">UPL</option>
+                <option value="wipro">Wipro</option>
+
+            </select>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16" id="date-icon">
+                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+
+            <input type="text" name="date1" placeholder="Insert Date Here" id="date-form" />
+
+
+            <input type="submit" id="button-submit" value="Predict" />
+
+        </form>
+    </div>
+</body>
+
+{% endblock %}
+
+</html>
